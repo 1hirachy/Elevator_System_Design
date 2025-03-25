@@ -1,107 +1,116 @@
-# Elevator System Design Documentation
+# Elevator System Design
 
 ## Overview
-This Elevator System is a comprehensive implementation using Java that follows Object-Oriented Design principles, including:
-- **Enum-based floor management**
-- **Interface-driven behaviors for buttons and panels**
-- **Singleton Design Pattern for elevator instance control**
-- **Multiple Models for modular functionality**
 
-The design ensures scalability, maintainability, and clear separation of concerns.
+This Java-based Elevator System is designed following Object-Oriented Design principles to simulate the operations of an elevator in a building. The system emphasizes scalability, maintainability, and a clear separation of concerns.
 
----
 ## Key Features
-✅ Multi-layered architecture using Enums, Interfaces, and Models  
-✅ Singleton Design Pattern to maintain a single Elevator instance  
-✅ Robust input validation to handle floor selection errors  
-✅ Supports multiple elevator requests efficiently  
-✅ Implements Observer Pattern for dynamic floor request tracking
 
----
-## Architecture Overview
+- **Enum-Based Floor Management:** Utilizes enums to represent floor numbers, ensuring type safety and clarity.
+- **Interface-Driven Components:** Defines behaviors for buttons, control panels, and doors through interfaces, promoting flexibility and extensibility.
+- **Singleton Design Pattern:** Ensures a single instance of the Elevator class to maintain consistent state and behavior across the system.
+- **Robust Input Validation:** Handles floor selection errors gracefully, enhancing user experience and system reliability.
+- **Efficient Request Handling:** Supports multiple elevator requests, processing them in an optimized manner.
+- **Observer Pattern Implementation:** Dynamically tracks and responds to floor requests, improving responsiveness and accuracy.
+- **Comprehensive Testing Features:** Includes unit tests to verify core functionalities, integration tests to ensure seamless interaction between components, and automated test scripts to validate system performance.
+
+## Project Structure
+
 ```
-/src
- ┣ /enums
- ┃ ┗ FloorNumber.java
- ┣ /interfaces
- ┃ ┣ Button.java
- ┃ ┣ ControlPanel.java
- ┃ ┗ Door.java
- ┣ /models
- ┃ ┣ Elevator.java
- ┃ ┣ Floor.java
- ┃ ┣ ElevatorButton.java
- ┃ ┣ InsidePanel.java
- ┃ ┗ OutsidePanel.java
- ┗ Main.java
+Elevator_System_Design/
+├── src/
+│   ├── enums/
+│   │   └── FloorNumber.java
+│   ├── interfaces/
+│   │   ├── Button.java
+│   │   ├── ControlPanel.java
+│   │   └── Door.java
+│   ├── models/
+│   │   ├── Elevator.java
+│   │   ├── Floor.java
+│   │   ├── ElevatorButton.java
+│   │   ├── ElevatorControlPanel.java
+│   │   └── ElevatorDoor.java
+│   ├── tests/
+│   │   ├── BaseElevatorSystemTest.java
+│   │   ├── ComplexElevatorSystemTest.java
+│   │   ├── ElevatorTest.java
+├── .gitignore
+├── README.md
+├── pom.xml
+└── LICENSE
 ```
 
----
-## Class Details
-### 1. Enums
-- **`FloorNumber`** — Enum to define floors from 1 to 15 with their respective values and retrieval logic.
+- **`enums/`**: Contains the `FloorNumber.java` enum, representing the floors in the building.
+- **`interfaces/`**: Defines interfaces such as `Button`, `ControlPanel`, and `Door` to standardize behaviors across different components.
+- **`models/`**: Implements the core classes like `Elevator`, `Floor`, and their associated components (`ElevatorButton`, `ElevatorControlPanel`, `ElevatorDoor`).
+- **`tests/`**: Includes unit and integration tests to verify the correctness and reliability of the system.
 
-### 2. Interfaces
-- **`Button`** — Defines methods for button interactions like `press()` and `isPressed()`.
-- **`ControlPanel`** — Manages user interaction for selecting floors.
-- **`Door`** — Interface to control elevator door operations.
+## Getting Started
 
-### 3. Models
-- **`Elevator`** (Singleton) — Core class to manage floor movement, door operations, and state management.
-- **`Floor`** — Represents individual floors with their assigned number and outside panel.
-- **`ElevatorButton`** — Provides button interactions for elevator requests.
-- **`InsidePanel` & `OutsidePanel`** — Manage user interaction for requesting floors from inside/outside the elevator.
+### Prerequisites
 
-### 4. Main Execution (`Main.java`)
-- Provides a simple command-line interface for:
-    - Requesting the elevator to a specific floor
-    - Displaying elevator status
-    - Exiting the application
+- **Java Development Kit (JDK) 8 or higher:** Ensure you have the appropriate JDK installed.
+- **Maven:** Used for dependency management and building the project.
 
----
-## How to Run the Application
-1. **Clone the Repository**
-   ```sh
-   git clone <repository_link>
-   cd <repository_folder>
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/1hirachy/Elevator_System_Design.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd Elevator_System_Design
+   ```
+3. **Build the project using Maven:**
+   ```bash
+   mvn clean install
    ```
 
-2. **Compile the Code**
-   ```sh
-   javac -d out $(find . -name "*.java")
-   ```
+### Running the Application
 
-3. **Run the Application**
-   ```sh
-   java -cp out system.design.elevator.Main
-   ```
+After building the project, you can run the application using your preferred Java IDE or from the command line:
 
-4. **Sample Interaction**
-```
-Elevator System Simulation:
-1. Request Elevator
-2. Show Elevator Status
-3. Exit
-Choose an option: 1
-Enter floor number (1-10): 5
-Elevator moving to Floor 5...
+```bash
+java -cp target/Elevator_System_Design-1.0-SNAPSHOT.jar com.yourpackage.Main
 ```
 
----
-## Future Enhancements
-🔹 Add support for multiple elevators with intelligent dispatching  
-🔹 Implement security features like keycard access for restricted floors  
-🔹 Introduce priority handling for emergency situations  
-🔹 Add comprehensive unit tests to ensure code stability
+*Note:* Replace `com.yourpackage.Main` with the actual main class path if different.
 
----
-## Best Practices Followed
-✅ **Singleton Design Pattern** — Ensures only one Elevator instance is active  
-✅ **Encapsulation** — Ensures proper access control and modular design  
-✅ **Robust Error Handling** — Provides informative error messages for invalid inputs  
-✅ **SOLID Principles** — Ensures scalable and maintainable code
+## Testing the Application
 
----
-## Conclusion
-This design effectively demonstrates a scalable and structured Elevator System suitable for complex real-world scenarios. The implementation leverages Java best practices to ensure high-quality, robust code.
+To run unit and integration tests, use the following Maven command:
 
+```bash
+mvn test
+```
+
+This will execute all test cases located in the `tests/` directory and ensure the system is functioning correctly.
+
+## Usage
+
+Upon running the application, the system will prompt for floor requests. Users can input desired floor numbers, and the elevator will respond accordingly, demonstrating the implemented features such as request handling, state management, and input validation.
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. **Fork the repository.**
+2. **Create a new branch:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make your changes and commit them:**
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. **Push to the branch:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **Submit a pull request.**
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
