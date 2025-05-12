@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.ref_name }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,7 +42,7 @@ jobs:
             • Branch: ${{ env.BRANCH_NAME }}
             • Commit:
             
-            View build logs: https://github.com/1hirachy/Java-Interview-Questions-Solutions/actions
+            View build logs: https://github.com/1hirachy/Elevator_System_Design/actions
 
 
 
@@ -61,4 +63,4 @@ jobs:
             • Branch: ${{ env.BRANCH_NAME }}
             • Commit:
             
-            Please check logs: https://github.com/1hirachy/Java-Interview-Questions-Solutions/actions
+            Please check logs: https://github.com/1hirachy/Elevator_System_Design/actions

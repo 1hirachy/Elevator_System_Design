@@ -1,11 +1,12 @@
 package org.example;
 
+import org.example.models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import system.design.elevator.enums.Direction;
-import system.design.elevator.enums.ElevatorNumber;
-import system.design.elevator.enums.FloorNumber;
-import system.design.elevator.models.*;
+import org.example.enums.Direction;
+import org.example.enums.ElevatorNumber;
+import org.example.enums.FloorNumber;
+
 
 import java.util.Arrays;
 

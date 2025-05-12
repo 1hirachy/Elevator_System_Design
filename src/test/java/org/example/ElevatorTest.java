@@ -1,10 +1,9 @@
 package org.example;
 
+import org.example.enums.ElevatorNumber;
+import org.example.models.Elevator;
 import org.junit.jupiter.api.Test;
-import system.design.elevator.enums.Direction;
-import system.design.elevator.enums.ElevatorNumber;
-import system.design.elevator.enums.FloorNumber;
-import system.design.elevator.models.Elevator;
+import org.example.enums.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
