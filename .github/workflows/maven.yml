@@ -1,12 +1,17 @@
 name: Daily Regression (Scheduled)
 
 on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches:[ "main" ]
+
   schedule:
     - cron: '0 5 * * *'  # Daily at 5:00 AM UTC (~midnight EST)
   workflow_dispatch:     # Optional: Manual trigger for testing
 
 jobs:
-  nightly-build:
+  build:
     runs-on: ubuntu-latest
 
     steps:
