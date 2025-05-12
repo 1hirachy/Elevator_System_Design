@@ -4,8 +4,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches:[ "main" ]
-
+    branches: [ "main" ]
   schedule:
     - cron: '0 5 * * *'  # Daily at 5:00 AM UTC (~midnight EST)
   workflow_dispatch:     # Optional: Manual trigger for testing
