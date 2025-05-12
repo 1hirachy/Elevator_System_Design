@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbd9b13c-b19e-4095-80ad-8a82dad47a1f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/daily_cron.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/daily_cron.yml" afterDir="false" />
-    </list>
+    <list default="true" id="bbd9b13c-b19e-4095-80ad-8a82dad47a1f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
