@@ -3,8 +3,8 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import system.design.elevator.enums.Direction;
-import system.design.elevator.enums.FloorNumber;
+import org.example.enums.Direction;
+import org.example.enums.FloorNumber;
 import org.example.models.*;
 
 import java.util.Arrays;
