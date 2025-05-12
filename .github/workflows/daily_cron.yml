@@ -1,10 +1,6 @@
 name: Daily Regression (Scheduled)
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   schedule:
     - cron: '0 5 * * *'  # Daily at 5:00 AM UTC (~midnight EST)
   workflow_dispatch:     # Optional: Manual trigger for testing
@@ -39,7 +35,7 @@ jobs:
           to: md.z.haque.chowdhury@gmail.com
           from: Github Actions Bot
           body: |
-            Daily Regression Build Succeeded!
+            Daily Regression Build for Elevator_System_Design Succeeded!
             
             • Branch: ${{ env.BRANCH_NAME }}
             • Commit:
@@ -60,7 +56,7 @@ jobs:
           to: md.z.haque.chowdhury@gmail.com
           from: Github Actions Bot
           body: |
-            Daily Regression Build Failed!
+            Daily Regression Build for Elevator_System_Design Failed!
             
             • Branch: ${{ env.BRANCH_NAME }}
             • Commit:
