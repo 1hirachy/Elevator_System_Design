@@ -25,24 +25,25 @@ jobs:
         id: build
         run: mvn -B package --file pom.xml
 
-      - name: Notify Email on Success
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: " Daily Regression Build Succeeded on ${{ env.BRANCH_NAME }}"
-          to: md.z.haque.chowdhury@gmail.com
-          from: Github Actions Bot
-          body: |
-            Daily Regression Build for Elevator_System_Design Succeeded!
-            
-            • Branch: ${{ env.BRANCH_NAME }}
-            • Commit:
-            
-            View build logs: https://github.com/1hirachy/Elevator_System_Design/actions
+#      Skipping successful build for now
+#      - name: Notify Email on Success
+#        if: success()
+#        uses: dawidd6/action-send-mail@v3
+#        with:
+#          server_address: smtp.gmail.com
+#          server_port: 465
+#          username: ${{ secrets.EMAIL_USERNAME }}
+#          password: ${{ secrets.EMAIL_PASSWORD }}
+#          subject: " Daily Regression Build Succeeded on ${{ env.BRANCH_NAME }}"
+#          to: md.z.haque.chowdhury@gmail.com
+#          from: Github Actions Bot
+#          body: |
+#            Daily Regression Build for Elevator_System_Design Succeeded!
+#
+#            • Branch: ${{ env.BRANCH_NAME }}
+#            • Commit:
+#
+#            View build logs: https://github.com/1hirachy/Elevator_System_Design/actions
 
 
 
